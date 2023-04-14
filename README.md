@@ -1,16 +1,9 @@
-# tajni_agent_app
+### Tajni agent društena igra
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Pravila:
+- Odaberi broj igrača
+- Prvi igrač pogleda lokaciju ili tajnog agenta te klikne gumb za dalje i preda mobitel drugom igraču
+- Ovaj proces se ponavlja za svakog igrača
+- Jedan po jedan igrači postavljaju pitanja nekome od drugih igrača
+- Civili koji znaju lokaciju pitanjima pokušavaju saznati tko je tajni agent
+- Tajni agent ne zna lokaciju i pitanjima pokušava saznati koja je lokacija
