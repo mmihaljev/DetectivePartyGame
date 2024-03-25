@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Tajni agent',
+      title: 'Detective',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         backgroundColor: Colors.black87,
@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("lib/assets/pozadina.jpg"),
+            image: AssetImage("lib/assets/start_game_bg.jpg"),
             fit: BoxFit.cover
           ),
         ),
@@ -44,54 +44,80 @@ class _MyHomePageState extends State<MyHomePage> {
           width: double.infinity,
           child: Column(
             children: [
-              const SizedBox(
-                height: 80,
-              ),
-              const Text(
-                'Tajni agent',
-                style: TextStyle(
-                  fontFamily: 'Bangers',
-                  fontSize: 60,
-                ),
-              ),
               const SizedBox(height: 40),
-              Row(
+              Column(
                 children: [
                   const SizedBox(
                     width: 40,
                   ),
-                  Opacity(
-                    opacity: 0.75,
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage("lib/assets/agent.png"),
-                          fit: BoxFit.fill
-                          ),
-                      ),
-                      child: const SizedBox(
-                        height: 500,
-                        width: 180,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 28),
-                  ElevatedButton(
-                    onPressed: (){
-                      Navigator.of(context).pushReplacement(MaterialPageRoute<void>(builder: (BuildContext context) => const GameSettingsScreen()));
-                    },
-                    child: Icon(Icons.play_arrow, size: 48),
-                    style: ElevatedButton.styleFrom(
+                  const SizedBox(height: 200),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 40),
+                    child: ElevatedButton(
+                      onPressed: (){
+                        Navigator.of(context).pushReplacement(MaterialPageRoute<void>(builder: (BuildContext context) => const GameSettingsScreen()));
+                      },
+                      style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(100),
                         ),
-                      minimumSize: const Size(80, 80),
-                      backgroundColor: Colors.deepPurple[500],
-                      foregroundColor: Colors.deepPurple[900],
-                      elevation: 20,
-                      shadowColor: Colors.deepPurple[500],
+                        minimumSize: const Size(80, 80),
+                        backgroundColor: Colors.black54,
+                        foregroundColor: Colors.white70,
+                        elevation: 20,
+                        shadowColor: Colors.white38,
+                        padding: EdgeInsets.symmetric(horizontal: 40)
+                      ),
+                      child: Row(
+                        children: const [
+                          Text(
+                            'Start game',
+                            style: TextStyle(
+                              fontFamily: 'CourierPrime',
+                              fontSize: 28,
+                            ),
+                          ),
+                          SizedBox(width: 4),
+                          Icon(Icons.play_arrow_outlined, size: 60),
+                        ],
+                      ),
                     ),
-                  )
+                  ),
+                  const SizedBox(height: 20),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 40),
+                    child: ElevatedButton(
+                      onPressed: (){
+                        Navigator.of(context).pushReplacement(MaterialPageRoute<void>(builder: (BuildContext context) => const GameSettingsScreen()));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          minimumSize: const Size(80, 80),
+                          backgroundColor: Colors.black54,
+                          foregroundColor: Colors.white,
+                          elevation: 20,
+                          shadowColor: Colors.white54,
+                          padding: EdgeInsets.symmetric(horizontal: 40),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Text(
+                            'Rules',
+                            style: TextStyle(
+                              fontFamily: 'CourierPrime',
+                              fontSize: 28,
+                            ),
+                          ),
+                          SizedBox(width: 12),
+                          Icon(Icons.rule, size: 44),
+                        ],
+                      ),
+                    ),
+                  ),
               ]),
             ],
           ),

@@ -36,6 +36,9 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  neon_circular_timer: ^0.0.7
+  image_card: ^0.0.4
+  flutter_swipe_button: ^2.1.1+1
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +80,37 @@ flutter:
      - lib/assets/airplane.jpg
      - lib/assets/locations.dart
      - lib/assets/prison.jpg
+     - lib/assets/gallery.jpg
+     - lib/assets/zoo.jpg
+     - lib/assets/airport.jpg
+     - lib/assets/dinning room.png
+     - lib/assets/dessert.jpg
+     - lib/assets/school.jpg
+     - lib/assets/bathroom.jpg
+     - lib/assets/library.jpg
+     - lib/assets/mall.jpg
+     - lib/assets/gym.jpg
+     - lib/assets/concert.jpg
+     - lib/assets/church.jpg
+     - lib/assets/movie theatre.jpg
+     - lib/assets/museum.jpg
+     - lib/assets/park.jpg
+     - lib/assets/theme park.jpg
+     - lib/assets/golf course.jpg
+     - lib/assets/laboratory.jpg
+     - lib/assets/nightclub.jpg
+     - lib/assets/tennis court.jpg
+     - lib/assets/cemetery.jpg
+     - lib/assets/hospital.jpg
+     - lib/assets/bank.jpg
+     - lib/assets/bowling alley.jpg
+     - lib/assets/train station.jpg
+     - lib/assets/hair salon.jpg
+     - lib/assets/bus stop.jpg
+     - lib/assets/coffe shop.jpg
+     - lib/assets/office.jpg
+     - lib/assets/gas station.jpg
+     - lib/assets/start_game_bg.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -100,6 +134,9 @@ flutter:
         - asset: lib/assets/Bangers-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+    - family: CourierPrime
+      fonts:
+        - asset: lib/assets/CourierPrime-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -1,14 +1,16 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:tajni_agent_app/main.dart';
+import 'package:tajni_agent_app/screens/timer_screen.dart';
 
 import '../assets/locations.dart';
 
 class GameScreen extends StatefulWidget {
   int numberOfPlayers;
+  int minutes;
+  int numOfAgents;
 
-  GameScreen(this.numberOfPlayers);
+  GameScreen(this.numberOfPlayers, this.minutes, this.numOfAgents);
 
   @override
   State<GameScreen> createState() => _GameScreenState();
@@ -16,20 +18,32 @@ class GameScreen extends StatefulWidget {
 
 class _GameScreenState extends State<GameScreen> {
   late Location map;
-  late int agent;
+  late List<int> agent;
   int _counter = 0;
 
   _chooseRandom() {
+    print(widget.numOfAgents);
     final random = Random();
+    agent = <int>[];
     map = Locations[random.nextInt(Locations.length)];
-    agent = random.nextInt(widget.numberOfPlayers-1)+1;
+    agent.add(random.nextInt(widget.numberOfPlayers));
+    if(widget.numOfAgents == 2) {
+      do {
+        agent.add(random.nextInt(widget.numberOfPlayers));
+      } while (agent[1] == agent[0]);
+    } else if (widget.numOfAgents == 3) {
+      do {
+        agent.add(random.nextInt(widget.numberOfPlayers));
+        agent.add(random.nextInt(widget.numberOfPlayers));
+      } while (agent[1] == agent[0] || agent[0] == agent[2] || agent[1] == agent[2]);
+    }
   }
 
   bool _isActive = false;
 
   _continue() {
     if (_counter == widget.numberOfPlayers) {
-      Navigator.of(context).pushReplacement(MaterialPageRoute<void>(builder: (BuildContext context) => MyHomePage()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute<void>(builder: (BuildContext context) => TimerScreen(widget.minutes)));
       return;
     }
     setState(() {
@@ -54,13 +68,13 @@ class _GameScreenState extends State<GameScreen> {
             children: [
               const SizedBox(height: 200),
               const Text(
-                'Sljedeći igrač',
-                style: TextStyle(
-                  fontSize: 52,
-                  fontFamily: 'Bangers',
-                  color: Colors.white,
-                ),
-              ),
+                    'Next player',
+                    style: TextStyle(
+                      fontSize: 48,
+                      fontFamily: 'CourierPrime',
+                      color: Colors.white,
+                    ),
+                  ),
               const SizedBox(height: 60),
               ElevatedButton(
                 onPressed: () {
@@ -71,18 +85,18 @@ class _GameScreenState extends State<GameScreen> {
                     borderRadius: BorderRadius.circular(100),
                   ),
                   minimumSize: const Size(100, 100),
-                  backgroundColor: Colors.deepPurple[400],
-                  foregroundColor: Colors.deepPurple[900],
+                  backgroundColor: Colors.white70,
+                  foregroundColor: Colors.black,
                   elevation: 10,
-                  shadowColor: Colors.deepPurple[400],
+                  shadowColor: Colors.white54,
                 ),
-                child: Icon(Icons.play_arrow, size: 60),
+                child: Icon(Icons.play_arrow_outlined, size: 60),
               ),
             ],
           ),
         ),
       );
-    } else if (_isActive && _counter!=agent){
+    } else if (_isActive && !agent.contains(_counter)){
       return Scaffold(
         body: Container(
           decoration: BoxDecoration(
@@ -96,13 +110,28 @@ class _GameScreenState extends State<GameScreen> {
               child: Column(
                 children: [
                   SizedBox(height: 200),
-                  Text(
-                    map.name,
-                    style: const TextStyle(
-                      fontSize: 52,
-                      fontFamily: 'Bangers',
-                      color: Colors.white,
-                    ),
+                  Stack(
+                    children: [
+                      Text(
+                        map.name,
+                        style: const TextStyle(
+                          fontSize: 48,
+                          fontFamily: 'CourierPrime',
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        map.name,
+                        style: TextStyle(
+                          fontSize: 48,
+                          fontFamily: 'CourierPrime',
+                          foreground: Paint()
+                            ..style = PaintingStyle.stroke
+                            ..strokeWidth = 2
+                            ..color = Colors.black,
+                        ),
+                      ),
+                    ]
                   ),
                   SizedBox(height: 60),
                   ElevatedButton(
@@ -114,12 +143,12 @@ class _GameScreenState extends State<GameScreen> {
                         borderRadius: BorderRadius.circular(100),
                       ),
                       minimumSize: const Size(100, 100),
-                      backgroundColor: Colors.deepPurple[400],
-                      foregroundColor: Colors.deepPurple[900],
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
                       elevation: 10,
-                      shadowColor: Colors.deepPurple[400],
+                      shadowColor: Colors.black,
                     ),
-                    child: Icon(Icons.play_arrow, size: 60),
+                    child: Icon(Icons.play_arrow_outlined, size: 60),
                   ),
                 ],
               ),
@@ -135,10 +164,11 @@ class _GameScreenState extends State<GameScreen> {
             children: [
               const SizedBox(height: 200),
               const Text(
-                'Ti si tajni agent!',
+                'Detective!',
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 52,
-                  fontFamily: 'Bangers',
+                  fontSize: 48,
+                  fontFamily: 'CourierPrime',
                   color: Colors.white,
                 ),
               ),
@@ -152,12 +182,12 @@ class _GameScreenState extends State<GameScreen> {
                     borderRadius: BorderRadius.circular(100),
                   ),
                   minimumSize: const Size(100, 100),
-                  backgroundColor: Colors.deepPurple[400],
-                  foregroundColor: Colors.deepPurple[900],
+                  backgroundColor: Colors.white70,
+                  foregroundColor: Colors.black,
                   elevation: 10,
-                  shadowColor: Colors.deepPurple[400],
+                  shadowColor: Colors.white54,
                 ),
-                child: Icon(Icons.play_arrow, size: 60),
+                child: Icon(Icons.play_arrow_outlined, size: 60),
               ),
             ],
           ),
