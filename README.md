@@ -1,4 +1,4 @@
-###Secret Agent Social Game
+Secret Agent Party Game
 
 Rules:
 
