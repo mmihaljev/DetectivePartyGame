@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swipe_button/flutter_swipe_button.dart';
-import 'package:tajni_agent_app/screens/game.dart';
+import 'package:detective_app/screens/game.dart';
 
 class GameSettingsScreen extends StatefulWidget {
   const GameSettingsScreen({Key? key}) : super(key: key);
@@ -233,7 +233,7 @@ class _GameSettingsScreenState extends State<GameSettingsScreen> {
                 height: 60,
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 40),
+                padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: SwipeButton.expand(
                   thumb: const Icon(
                     Icons.play_arrow_outlined,

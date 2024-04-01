@@ -1,5 +1,5 @@
-name: tajni_agent_app
-description: A new Flutter project.
+name: detective_app
+description: Detective party game.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -17,7 +17,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 1.1.1
 
 environment:
   sdk: '>=2.18.5 <3.0.0'
@@ -39,6 +39,7 @@ dependencies:
   neon_circular_timer: ^0.0.7
   image_card: ^0.0.4
   flutter_swipe_button: ^2.1.1+1
+  story_view: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -111,6 +112,16 @@ flutter:
      - lib/assets/office.jpg
      - lib/assets/gas station.jpg
      - lib/assets/start_game_bg.jpg
+     - lib/assets/detective.jpeg
+     - lib/assets/1.jpg
+     - lib/assets/2.jpg
+     - lib/assets/3.jpg
+     - lib/assets/4.jpg
+     - lib/assets/5.jpg
+     - lib/assets/6.jpg
+     - lib/assets/7.jpg
+     - lib/assets/8.jpg
+     - lib/assets/9.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

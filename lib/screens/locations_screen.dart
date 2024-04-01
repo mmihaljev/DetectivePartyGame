@@ -14,10 +14,10 @@ class LocationsScreen extends StatelessWidget {
         backgroundColor: Colors.black87,
         title: const Padding(
           padding: EdgeInsets.all(12),
-          child: Text('Lokacije',
+          child: Text('Locations',
               style: TextStyle(
                   fontSize: 48,
-                  fontFamily: 'Bangers',
+                  fontFamily: 'CourierPrime',
                   fontWeight: FontWeight.w900,
                   color: Colors.white)),
         ),
@@ -29,7 +29,7 @@ class LocationsScreen extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             return Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TransparentImageCard(
@@ -37,9 +37,9 @@ class LocationsScreen extends StatelessWidget {
                   imageProvider: AssetImage(Locations[index].image),
                   title: Text(
                     Locations[index].name,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.white,
-                        fontFamily: 'Bangers',
+                        fontFamily: 'CourierPrime',
                         fontSize: 28),
                   ),
                 ),

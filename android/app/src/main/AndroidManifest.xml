@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tajni_agent_app">
+    package="trict.detective_app">
    <application
-        android:label="Tajni agent"
+        android:label="Detective"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

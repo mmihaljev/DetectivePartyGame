@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:neon_circular_timer/neon_circular_timer.dart';
-import 'package:tajni_agent_app/main.dart';
-import 'package:tajni_agent_app/screens/locations_screen.dart';
+import 'package:detective_app/main.dart';
+import 'package:detective_app/screens/locations_screen.dart';
 
 class TimerScreen extends StatelessWidget {
   TimerScreen(this.counterTime);

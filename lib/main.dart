@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tajni_agent_app/screens/game_settings.dart';
+import 'package:detective_app/screens/game_settings.dart';
+import 'package:detective_app/screens/rules.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Detective',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -33,6 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -88,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     margin: EdgeInsets.symmetric(horizontal: 40),
                     child: ElevatedButton(
                       onPressed: (){
-                        Navigator.of(context).pushReplacement(MaterialPageRoute<void>(builder: (BuildContext context) => const GameSettingsScreen()));
+                        Navigator.of(context).push(MaterialPageRoute<void>(builder: (BuildContext context) => const Rules()));
                       },
                       style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(

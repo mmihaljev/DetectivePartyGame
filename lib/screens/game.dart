@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:tajni_agent_app/screens/timer_screen.dart';
+import 'package:detective_app/screens/timer_screen.dart';
 
 import '../assets/locations.dart';
 
@@ -90,7 +90,7 @@ class _GameScreenState extends State<GameScreen> {
                   elevation: 10,
                   shadowColor: Colors.white54,
                 ),
-                child: Icon(Icons.play_arrow_outlined, size: 60),
+                child: const Icon(Icons.play_arrow_outlined, size: 60),
               ),
             ],
           ),
@@ -109,7 +109,7 @@ class _GameScreenState extends State<GameScreen> {
             child: Center(
               child: Column(
                 children: [
-                  SizedBox(height: 200),
+                  const SizedBox(height: 200),
                   Stack(
                     children: [
                       Text(
@@ -133,7 +133,7 @@ class _GameScreenState extends State<GameScreen> {
                       ),
                     ]
                   ),
-                  SizedBox(height: 60),
+                  const SizedBox(height: 60),
                   ElevatedButton(
                     onPressed: () {
                       _continue();
@@ -148,7 +148,7 @@ class _GameScreenState extends State<GameScreen> {
                       elevation: 10,
                       shadowColor: Colors.black,
                     ),
-                    child: Icon(Icons.play_arrow_outlined, size: 60),
+                    child: const Icon(Icons.play_arrow_outlined, size: 60),
                   ),
                 ],
               ),
@@ -159,37 +159,57 @@ class _GameScreenState extends State<GameScreen> {
     } else {
       return Scaffold(
         backgroundColor: Colors.black,
-        body: Center(
-          child: Column(
-            children: [
-              const SizedBox(height: 200),
-              const Text(
-                'Detective!',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 48,
-                  fontFamily: 'CourierPrime',
-                  color: Colors.white,
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+            image: AssetImage("lib/assets/detective.jpeg"), fit: BoxFit.cover),
+          ),
+          child: Center(
+            child: Column(
+              children: [
+                const SizedBox(height: 200),
+                Stack(
+                    children: [
+                      const Text(
+                        "Detective!",
+                        style: TextStyle(
+                          fontSize: 48,
+                          fontFamily: 'CourierPrime',
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        "Detective",
+                        style: TextStyle(
+                          fontSize: 48,
+                          fontFamily: 'CourierPrime',
+                          foreground: Paint()
+                            ..style = PaintingStyle.stroke
+                            ..strokeWidth = 2
+                            ..color = Colors.black,
+                        ),
+                      ),
+                    ]
                 ),
-              ),
-              const SizedBox(height: 60),
-              ElevatedButton(
-                onPressed: () {
-                  _continue();
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(100),
+                const SizedBox(height: 60),
+                ElevatedButton(
+                  onPressed: () {
+                    _continue();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    minimumSize: const Size(100, 100),
+                    backgroundColor: Colors.white70,
+                    foregroundColor: Colors.black,
+                    elevation: 10,
+                    shadowColor: Colors.white54,
                   ),
-                  minimumSize: const Size(100, 100),
-                  backgroundColor: Colors.white70,
-                  foregroundColor: Colors.black,
-                  elevation: 10,
-                  shadowColor: Colors.white54,
+                  child: const Icon(Icons.play_arrow_outlined, size: 60),
                 ),
-                child: Icon(Icons.play_arrow_outlined, size: 60),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       );

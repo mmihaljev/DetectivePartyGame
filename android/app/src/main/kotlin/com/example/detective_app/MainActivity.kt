@@ -1,4 +1,4 @@
-package com.example.tajni_agent_app
+package trict.detective_app
 
 import io.flutter.embedding.android.FlutterActivity
 
