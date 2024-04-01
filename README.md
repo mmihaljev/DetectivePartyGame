@@ -1,9 +1,15 @@
-### Tajni agent društena igra
+###Secret Agent Social Game
 
-Pravila:
-- Odaberi broj igrača
-- Prvi igrač pogleda lokaciju ili tajnog agenta te klikne gumb za dalje i preda mobitel drugom igraču
-- Ovaj proces se ponavlja za svakog igrača
-- Jedan po jedan igrači postavljaju pitanja nekome od drugih igrača
-- Civili koji znaju lokaciju pitanjima pokušavaju saznati tko je tajni agent
-- Tajni agent ne zna lokaciju i pitanjima pokušava saznati koja je lokacija
+Rules:
+
+  - Choose the number of players.
+  
+  - The first player looks at the location or secret agent and clicks the next button, then hands the phone to the next player.
+  
+  - This process repeats for each player.
+    
+  - One by one, players ask questions to someone else.
+    
+  - Civilians who know the location try to figure out who the secret agent is through questioning.
+    
+  - The secret agent doesn't know the location and tries to figure out the location through questioning.
